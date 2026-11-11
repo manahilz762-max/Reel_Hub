@@ -1,0 +1,317 @@
+.rh-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(15, 15, 14, 0.94);
+  border-bottom: 1px solid rgba(199, 169, 107, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.rh-navbar {
+  width: min(100% - 64px, 1440px);
+  min-height: 86px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Brand and emblem */
+
+.rh-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.rh-brand-symbol {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: #c7a96b;
+  border: 1px solid rgba(199, 169, 107, 0.6);
+  transition: border-color 0.3s ease;
+}
+
+.rh-brand-symbol::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(199, 169, 107, 0.25);
+}
+
+.rh-aperture {
+  position: absolute;
+  transition: transform 0.55s ease;
+}
+
+.rh-symbol-letter {
+  position: relative;
+  z-index: 1;
+  color: #f4eee2;
+  font-family: 'Arimo', sans-serif;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.rh-brand:hover .rh-aperture {
+  transform: rotate(45deg);
+}
+
+.rh-brand:hover .rh-brand-symbol {
+  border-color: #e3ca91;
+}
+
+.rh-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rh-wordmark {
+  color: #f3f0e9;
+  font-family: 'Arimo', sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.rh-wordmark span {
+  color: #c7a96b;
+}
+
+.rh-tagline {
+  color: #a69a82;
+  font-family: 'Arimo', sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 1.55px;
+  white-space: nowrap;
+}
+
+/* Desktop navigation */
+
+.rh-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 1.7vw, 27px);
+}
+
+.rh-nav-link {
+  position: relative;
+  padding: 9px 0;
+  color: #aaa69d;
+  font-family: 'Arimo', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.rh-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  width: 0;
+  height: 1px;
+  background: #c7a96b;
+  transition: width 0.25s ease;
+}
+
+.rh-nav-link:hover,
+.rh-nav-active {
+  color: #e3ca91;
+}
+
+.rh-nav-link:hover::after,
+.rh-nav-active::after {
+  width: 100%;
+}
+
+/* Contact CTA */
+
+.rh-contact-button {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  color: #171612;
+  background: #c7a96b;
+  border: 1px solid #c7a96b;
+  font-family: 'Arimo', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.rh-contact-button:hover {
+  color: #e2ca94;
+  background: transparent;
+  border-color: #c7a96b;
+}
+
+.rh-contact-mobile,
+.rh-menu-toggle {
+  display: none;
+}
+
+/* Medium screens */
+
+@media (max-width: 1120px) {
+  .rh-navbar {
+    width: calc(100% - 40px);
+    gap: 20px;
+  }
+
+  .rh-nav-links {
+    gap: 15px;
+  }
+
+  .rh-nav-link {
+    font-size: 11px;
+  }
+
+  .rh-wordmark {
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+
+  .rh-tagline {
+    letter-spacing: 1.1px;
+  }
+
+  .rh-contact-button {
+    padding: 0 12px;
+  }
+}
+
+/* Mobile navigation */
+
+@media (max-width: 860px) {
+  .rh-navbar {
+    min-height: 76px;
+    width: calc(100% - 36px);
+    gap: 12px;
+  }
+
+  .rh-brand-symbol {
+    width: 42px;
+    height: 42px;
+  }
+
+  .rh-wordmark {
+    font-size: 21px;
+  }
+
+  .rh-nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 24px 24px;
+    background: #11110f;
+    border-bottom: 1px solid rgba(199, 169, 107, 0.25);
+  }
+
+  .rh-nav-open {
+    display: flex;
+  }
+
+  .rh-nav-link {
+    padding: 15px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 13px;
+  }
+
+  .rh-nav-link::after {
+    display: none;
+  }
+
+  .rh-contact-button {
+    display: none;
+  }
+
+  .rh-contact-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 13px 15px;
+    color: #171612;
+    background: #c7a96b;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .rh-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    color: #c7a96b;
+    background: transparent;
+    border: 1px solid rgba(199, 169, 107, 0.3);
+    cursor: pointer;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 380px) {
+  .rh-navbar {
+    width: calc(100% - 24px);
+  }
+
+  .rh-brand {
+    gap: 8px;
+  }
+
+  .rh-brand-symbol {
+    width: 37px;
+    height: 37px;
+  }
+
+  .rh-aperture {
+    width: 25px;
+    height: 25px;
+  }
+
+  .rh-symbol-letter {
+    font-size: 18px;
+  }
+
+  .rh-wordmark {
+    font-size: 18px;
+    letter-spacing: 1.7px;
+  }
+
+  .rh-tagline {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+}

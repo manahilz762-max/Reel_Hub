@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f5f0e6;
+  background: #111110;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --charcoal: #111110;
+  --charcoal-soft: #191917;
+  --ivory: #f5f0e6;
+  --gold: #b49a67;
+  --beige: #e6ddce;
+  --muted: #a7a196;
+  --line: rgba(245, 240, 230, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+body,
+button,
+a {
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
