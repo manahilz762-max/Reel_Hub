@@ -1,6 +1,6 @@
 
 import { useMemo, useState } from "react";
-import groupPhoto from "../assets/img/Team Pictures/Team.JPEG";
+import groupPhoto from "../assets/img/Team Pictures/team.jpeg";
 import aimanPhoto from "../assets/img/Team Pictures/Aiman Arif.jpeg";
 
 import "./Portfolios.css";
